@@ -6,6 +6,9 @@ Utils
 **.yaml
 **.txt
 
+# Generator results
+tasks/revision-of-file-store/fix-db.sql
+
 !requirements.txt
 
 ### JetBrains template
@@ -668,3 +671,4 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+!/tasks/revision-of-file-store/fix-db.sql

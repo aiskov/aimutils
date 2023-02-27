@@ -1,5 +1,5 @@
 import yaml
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 
 
 class FileInfoVersion:
@@ -16,6 +16,13 @@ class FileInfo:
 
     def add_version(self, version: FileInfoVersion):
         self.versions.append(version)
+
+    def find_version(self, version_id: str) -> Optional[FileInfoVersion]:
+        for version in self.versions:
+            if version.version_id == version_id or not version_id and version.version_id == 'null':
+                return version
+
+        return None
 
     @staticmethod
     def from_dump(fileRows: List[Dict[str, Any]]) -> List['FileInfo']:
